@@ -1,5 +1,7 @@
 # encoding: utf-8
-load 'function.rb'
+#!/usr/bin/env ruby
+
+load '../functions.rb'
 require 'optparse'
 
 class Qmail_Log < Parts
@@ -110,23 +112,28 @@ class Qmail_Log < Parts
   end 
 end
 
+
 options = {:file => nil}
 optparse = OptionParser.new do |opts|
-  opts.banner = "Usage: script.rb [options] [options] file"
+  opts.banner = "Usage: file.rb [options]"
 
   opts.on('-f', '--file') do |file|
     options[:file] = file
   end
+ 
+  opts.on('-h', '--help') do |help|
+    puts opts
+  end
 end
+
 optparse.parse!
 
 if options[:file]
   exec("ruby qmail.rb > log.txt")
 end
 
-
-obj = Qmail_Log.new
-obj.rblsmtpd(2)
+#obj = Qmail_Log.new
+#obj.rblsmtpd(2)
 #obj.tcpserver1(2)
 #obj.qmail_send(2)
 #obj.tcpserver2(2)

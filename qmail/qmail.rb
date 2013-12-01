@@ -1,4 +1,3 @@
-# encoding: utf-8
 #!/usr/bin/env ruby
 
 load '../functions.rb'
@@ -112,6 +111,10 @@ class Qmail_Log < Parts
   end 
 end
 
+array = ['rblsmtpd', 'tcpserver1', 'qmail_send', 'tcpserver2', 'tcpserver3', 'jgreylist', 'spf', 'greetdelay', 'auth', 'mailrcpt']
+text_file=File.open('create.rb')
+    file = text_file.readlines()
+    text_file.close
 
 options = {:file => nil}
 optparse = OptionParser.new do |opts|
@@ -124,6 +127,15 @@ optparse = OptionParser.new do |opts|
   opts.on('-h', '--help') do |help|
     puts opts
   end
+
+  opts.on('-p', '--process') do |process|
+    if file.include? array[2]
+      puts 'type: qmail-send log' 
+    else
+      puts 'type: smtpd log'
+    end
+  end 
+    
 end
 
 optparse.parse!
@@ -132,15 +144,4 @@ if options[:file]
   exec("ruby qmail.rb > log.txt")
 end
 
-#obj = Qmail_Log.new
-#obj.rblsmtpd(2)
-#obj.tcpserver1(2)
-#obj.qmail_send(2)
-#obj.tcpserver2(2)
-#obj.tcpserver3(3)
-#obj.jgreylist(1)
-#obj.spf(4)
-#obj.greetdelay(1)
-#obj.auth(2)
-#obj.mailrcpt(1)
 

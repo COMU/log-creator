@@ -19,12 +19,6 @@ class Parts
     return ip
   end
 
-#generated random port number.format: '50'
-  def port_rand
-    port = Random.rand(1..1000)
-    return port
-  end
-
 #generated random proccess id.format: '28065'
   def pid_rand
     pid = Random.rand(1000..65535)

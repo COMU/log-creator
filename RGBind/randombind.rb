@@ -1,4 +1,4 @@
-load "../function.rb"
+load "../functions.rb"
 
 pv=[10,20] #preferecnce-value
 $randpv = pv[Random.rand(0..1)]
@@ -42,16 +42,15 @@ while (i<=a )
          end
          i = i+1
 end
-$func = Function.new
-       
-		
+$func = Parts.new
+$gdata = File.new("./gdata.txt", "w+")       
 class BIND		
 	
 	def arecord
 		j=1
 		
         	while (j <= $howmucha) # Ne kadar arecord deger uretilmek isteniyorsa o kadar arecord degeri rasgele secer
-			puts "#{($func.time()).to_s}  queries: info: client #{$func.ip()}  #  #{$func.port()} :  \  \n query: #{$func.URL()} IN A #$ip"
+			puts "#{($func.time()).to_s}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()} :  \  \n query: #{$func.URL()} IN A #$ip"
                 	j = j+1
         	end
 
@@ -60,7 +59,7 @@ class BIND
 	def cname
 		j=1
 		while (j <= $howmuchcname) # Ne kadar cname deger uretilmek isteniyorsa o kadar cname degeri rasgele secer
-			puts "#{ ($func.time()).to_s} queries: info: client #{$func.ip()} #  #{$func.port()}  :  \  \n query: #{$func.URL()} mail IN CNAME #{$func.URL()}"
+			puts "#{ ($func.time()).to_s} queries: info: client #{$func.ip_rand()} #  #{$func.port()}  :  \  \n query: #{$func.URL()} mail IN CNAME #{$func.URL()}"
                     
                         j = j+1
                 end
@@ -68,11 +67,11 @@ class BIND
 	end
 
 	def mx
+		url = $func.URL()
 		j=1
 
                 while (j <= $howmuchmx) # Ne kadar mx deger uretilmek isteniyorsa o kadar mx degeri rasgele secer
-			url = $func.URL()
-			puts"#{($func.time()).to_s}  queries: info: client #{$func.ip()}  #  #{$func.port()}   :  \  \n   query:" + url + " IN MX #$randpv " + url
+			puts"#{($func.time()).to_s}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()}   :  \  \n   query:" + url + " IN MX #$randpv " + url
                         j = j+1
                 end
 
@@ -82,22 +81,23 @@ class BIND
 	def nameserver
 		j=1
 		while (j <= $howmuchnameserver) # Ne kadar nameserver deger uretilmek isteniyorsa o kadar nameserver degeri rasgele secer
-			puts "#{($func.time()).to_s} queries: info: client #{$func.ip()} #  #{$func.port()}   :  \  \n  query: IN NS #{$func.URL()}"
+			puts "#{($func.time()).to_s} queries: info: client #{$func.ip_rand()} #  #{$func.port()}   :  \  \n  query: IN NS #{$func.URL()}"
 
 			j = j+1
                end
 	end
-		
+	
+	#$gdata.close		
 end
 
 bind =BIND.new
-puts bind.arecord()
-puts bind.mx()
+
+$gdata.puts "#{bind.arecord()}"
+puts  bind.mx()
 puts bind.cname()
 puts bind.nameserver()
 
-
-	
+$gdata.close
 	
 
 

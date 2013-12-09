@@ -92,11 +92,11 @@ end
 
 bind = BIND.new
 
-$gdata.puts "#{bind.arecord()}"
+puts bind.arecord()
 puts  bind.mx()
 puts bind.cname()
 puts bind.nameserver()
-$gdata.puts bind.to_yaml
+
 $gdata.close
 	
 

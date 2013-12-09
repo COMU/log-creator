@@ -14,7 +14,7 @@ class Parts
   
   def time
 	next_date = time_rand $rand_date, Time.local(2014,7,1)
-	$rand_date = next_date
+	$rand_date = next_date	
   end
 
 

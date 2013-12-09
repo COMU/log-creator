@@ -50,7 +50,7 @@ class BIND
 		j=1
 		
         	while (j <= $howmucha) # Ne kadar arecord deger uretilmek isteniyorsa o kadar arecord degeri rasgele secer
-			puts "#{($func.time()).to_s}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()} :  \  \n query: #{$func.URL()} IN A #$ip"
+			puts "#{($func.time()).to_s.sub(" +",".")}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()} :  \  \n query: #{$func.URL()} IN A #$ip"
                 	j = j+1
         	end
 
@@ -59,7 +59,7 @@ class BIND
 	def cname
 		j=1
 		while (j <= $howmuchcname) # Ne kadar cname deger uretilmek isteniyorsa o kadar cname degeri rasgele secer
-			puts "#{ ($func.time()).to_s} queries: info: client #{$func.ip_rand()} #  #{$func.port()}  :  \  \n query: #{$func.URL()} mail IN CNAME #{$func.URL()}"
+			puts "#{ ($func.time()).to_s.sub(" +",".")} queries: info: client #{$func.ip_rand()} #  #{$func.port()}  :  \  \n query: #{$func.URL()} mail IN CNAME #{$func.URL()}"
                     
                         j = j+1
                 end
@@ -71,7 +71,7 @@ class BIND
 		j=1
 
                 while (j <= $howmuchmx) # Ne kadar mx deger uretilmek isteniyorsa o kadar mx degeri rasgele secer
-			puts"#{($func.time()).to_s}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()}   :  \  \n   query:" + url + " IN MX #$randpv " + url
+			puts"#{($func.time()).to_s.sub(" +",".")}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()}   :  \  \n   query:" + url + " IN MX #$randpv " + url
                         j = j+1
                 end
 
@@ -81,7 +81,7 @@ class BIND
 	def nameserver
 		j=1
 		while (j <= $howmuchnameserver) # Ne kadar nameserver deger uretilmek isteniyorsa o kadar nameserver degeri rasgele secer
-			puts "#{($func.time()).to_s} queries: info: client #{$func.ip_rand()} #  #{$func.port()}   :  \  \n  query: IN NS #{$func.URL()}"
+			puts "#{($func.time()).to_s.sub(" +",".")} queries: info: client #{$func.ip_rand()} #  #{$func.port()}   :  \  \n  query: IN NS #{$func.URL()}"
 
 			j = j+1
                end

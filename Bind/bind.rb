@@ -43,14 +43,16 @@ while (i<=a )
          i = i+1
 end
 $func = Parts.new
-$gdata = File.new("./gdata.txt", "w+")       
+$log = File.new("./log.txt", "w+")       
 class BIND		
 	
 	def arecord
 		j=1
 		
         	while (j <= $howmucha) # Ne kadar arecord deger uretilmek isteniyorsa o kadar arecord degeri rasgele secer
-			puts "#{($func.time()).to_s.sub(" +",".")}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()} :  \  \n query: #{$func.URL()} IN A #$ip"
+			$output = "#{($func.time()).to_s.sub(" +",".")}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()} :  \  \n query: #{$func.URL()} IN A #$ip"
+			puts $output
+			$log.puts($output)
                 	j = j+1
         	end
 
@@ -59,7 +61,9 @@ class BIND
 	def cname
 		j=1
 		while (j <= $howmuchcname) # Ne kadar cname deger uretilmek isteniyorsa o kadar cname degeri rasgele secer
-			puts "#{ ($func.time()).to_s.sub(" +",".")} queries: info: client #{$func.ip_rand()} #  #{$func.port()}  :  \  \n query: #{$func.URL()} mail IN CNAME #{$func.URL()}"
+			$output = "#{ ($func.time()).to_s.sub(" +",".")} queries: info: client #{$func.ip_rand()} #  #{$func.port()}  :  \  \n query: #{$func.URL()} mail IN CNAME #{$func.URL()}"
+			puts $output
+			$log.puts($output)
                     
                         j = j+1
                 end
@@ -71,7 +75,9 @@ class BIND
 		j=1
 
                 while (j <= $howmuchmx) # Ne kadar mx deger uretilmek isteniyorsa o kadar mx degeri rasgele secer
-			puts"#{($func.time()).to_s.sub(" +",".")}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()}   :  \  \n   query:" + url + " IN MX #$randpv " + url
+			$output = "#{($func.time()).to_s.sub(" +",".")}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()}   :  \  \n   query:" + url + " IN MX #$randpv " + url
+			puts $output
+			$log.puts($output)
                         j = j+1
                 end
 
@@ -81,13 +87,14 @@ class BIND
 	def nameserver
 		j=1
 		while (j <= $howmuchnameserver) # Ne kadar nameserver deger uretilmek isteniyorsa o kadar nameserver degeri rasgele secer
-			puts "#{($func.time()).to_s.sub(" +",".")} queries: info: client #{$func.ip_rand()} #  #{$func.port()}   :  \  \n  query: IN NS #{$func.URL()}"
+			$output = "#{($func.time()).to_s.sub(" +",".")} queries: info: client #{$func.ip_rand()} #  #{$func.port()}   :  \  \n  query: IN NS #{$func.URL()}"
+			puts $output
+			$log.puts($output)
 
 			j = j+1
                end
 	end
-	
-	#$gdata.close		
+		
 end
 
 bind = BIND.new
@@ -97,7 +104,7 @@ puts  bind.mx()
 puts bind.cname()
 puts bind.nameserver()
 
-$gdata.close
+$log.close
 	
 
 

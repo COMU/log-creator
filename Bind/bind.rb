@@ -24,7 +24,7 @@ $row2 = $row2.split(" ")
 a = $row1.length
 while (i<=a )
 	
-         if $row1[i-1] == "A"  #finds out where is "Arecord" in the first string and finds out how many "Arecords" are requested beneath 
+         if $row1[i-1] == "A"  # finds out where is "Arecord" in the first string and finds out how many "Arecords" are requested beneath 
 		$numbera[i-1] = Integer($row2[i-1])
 		$howmucha = $howmucha + $numbera[i-1]
          end

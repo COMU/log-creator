@@ -9,11 +9,13 @@ end
 class Parts
 
 #generated random time
-   
-  $rand_date = time_rand Time.now, Time.local(2014,7,1)
+  
+  $rand = time_rand Time.local(2014), Time.local(2017)
+ 
+  $rand_date = time_rand Time.now, $rand
   
   def time
-	next_date = time_rand $rand_date, Time.local(2014,7,1)
+	next_date = time_rand $rand_date, $rand
 	$rand_date = next_date	
   end
 

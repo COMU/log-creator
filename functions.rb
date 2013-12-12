@@ -1,22 +1,18 @@
 # encoding: utf-8
 #!/usr/bin/env ruby
 
-def time_rand from = 0.0, to = Time.now
-        Time.at(from + rand * (to.to_f - from.to_f))
-end
-
 
 class Parts
 
 #generated random time
   
-  $rand = time_rand Time.local(2014), Time.local(2017)
- 
-  $rand_date = time_rand Time.now, $rand
-  
+  $rand = time_rand
+
   def time
-	next_date = time_rand $rand_date, $rand
-	$rand_date = next_date	
+
+	randms = ($rand.to_f * 1000).to_i
+	next_date = Time.at (randms+4500)/1000
+	$rand = next_date
   end
 
 

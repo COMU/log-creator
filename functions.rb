@@ -1,35 +1,20 @@
 # encoding: utf-8
 #!/usr/bin/env ruby
 
-
 class Parts
 
 #generated random time
-  
-  $rand = time_rand
-
-  def time
-
-	randms = ($rand.to_f * 1000).to_i
-	next_date = Time.at (randms+4500)/1000
-	$rand = next_date
+  def time_rand from = 0.0, to = Time.now
+	Time.at(from + rand * (to.to_f - from.to_f))
   end
 
-
-# generated random time.format: '973492011' 
-  def time_rand1
-    Time.at(rand * Time.now.to_i).nsec
-  end
-
-#generated random time.format: '1972-09-01 03:22:52 +0300'
-  def time_rand2
-    Time.at(rand * Time.now.to_i)
+  def time(start_time, end_time)
+	next_time = time_rand start_time, end_time
   end
 
 #generated random ip.format:'115.232.14.162'
   def ip_rand
-    ip = "%d.%d.%d.%d" % [rand(256), rand(256), rand(256), rand(256)]
-    return ip
+	ip = ((('1'..'255').to_a).sort_by {rand}[0,1].join + "." + (('1'..'255').to_a).sort_by {rand}[0,1].join + "." + (('1'..'255').to_a).sort_by {rand}[0,1].join + "." + (('1'..'255').to_a).sort_by {rand}[0,1].join)
   end
 
 #generated random proccess id.format: '28065'

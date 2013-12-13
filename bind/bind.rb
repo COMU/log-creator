@@ -6,7 +6,7 @@ require 'optparse'
 options = {}
 pv=[10,20] #preferecnce-value
 $randpv = pv[Random.rand(0..1)]
-$file = IO.readlines("./file.txt") #reading from the file and assigning to another string
+$file = IO.readlines("./bind.config") #reading from the file and assigning to another string
 i = 1
 $howmucha = 0
 $howmuchcname = 0

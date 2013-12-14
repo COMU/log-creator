@@ -17,12 +17,6 @@ class Parts
 	ip = ((('1'..'255').to_a).sort_by {rand}[0,1].join + "." + (('1'..'255').to_a).sort_by {rand}[0,1].join + "." + (('1'..'255').to_a).sort_by {rand}[0,1].join + "." + (('1'..'255').to_a).sort_by {rand}[0,1].join)
   end
 
-#generated random proccess id.format: '28065'
-  def pid_rand
-    pid = Random.rand(1000..65535)
-    return pid
-  end
-
 #generated random e-mail.format: 'jyevbjseh@lkqpmckry.com'
   def mail_rand
     o =  [('a'..'z')].map{|r| r.to_a}.flatten

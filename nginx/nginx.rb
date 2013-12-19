@@ -1,6 +1,5 @@
 
-
-  load '../functions.rb'
+ load '../functions.rb'
 
 
  array=Array.new

@@ -5,7 +5,7 @@ class Parts
 
 #generat random time
   def time_rand from = 0.0, to = Time.now
-      Time.at(from + rand * (to.to_f - from.to_f))
+    Time.at(from + rand * (to.to_f - from.to_f))
   end
 
   def time(start_time, end_time)
@@ -14,7 +14,7 @@ class Parts
 
 #generat random ip.format:'115.232.14.162'
   def ip_rand
-      ip = ((('1'..'255').to_a).sort_by {rand}[0,1].join + "." + (('1'..'255').to_a).sort_by {rand}[0,1].join + "." + (('1'..'255').to_a).sort_by {rand}[0,1].join + "." + (('1'..'255').to_a).sort_by {rand}[0,1].join)
+    ip = ((('1'..'255').to_a).sort_by {rand}[0,1].join + "." + (('1'..'255').to_a).sort_by {rand}[0,1].join + "." + (('1'..'255').to_a).sort_by {rand}[0,1].join + "." + (('1'..'255').to_a).sort_by {rand}[0,1].join)
   end
 
 #generat random e-mail.format: 'jyevbjseh@lkqpmckry.com'
@@ -53,7 +53,7 @@ class Parts
 
 #generat random url
   def URL
-      tld = [".com",".net", ".biz", ".biz", ".org", ".info", ".us", "co.uk", ".de", ".co", ".io", ".me", ".pw", ".ca", ".tv", ".in", ".mobi", ".es", ".com.es", ".nom.es", ".org.es", ".com.au", ".net.au", ".org.au", ".eu", ".cc", ".org.uk", ".fr", ".pe", ".us.com", ".asia", ".ch", ".bz", "me.uk", "ws", ".xxx", ".sg", ".com.sg", ".li", ".de.com", ".cm", ".com.pe", ".net.pe", ".org.pe", ".nu", ".com.tr", ".gen.tr", ".web.tr", ".name.tr", ".tv.tr", "net.tr", ".gov.tr", ".bel.tr", ".edu.tr", ".org.tr", ".bbs.tr", ".av.tr", ".dr.tr", ".gs" ]
+    tld = [".com",".net", ".biz", ".biz", ".org", ".info", ".us", "co.uk", ".de", ".co", ".io", ".me", ".pw", ".ca", ".tv", ".in", ".mobi", ".es", ".com.es", ".nom.es", ".org.es", ".com.au", ".net.au", ".org.au", ".eu", ".cc", ".org.uk", ".fr", ".pe", ".us.com", ".asia", ".ch", ".bz", "me.uk", "ws", ".xxx", ".sg", ".com.sg", ".li", ".de.com", ".cm", ".com.pe", ".net.pe", ".org.pe", ".nu", ".com.tr", ".gen.tr", ".web.tr", ".name.tr", ".tv.tr", "net.tr", ".gov.tr", ".bel.tr", ".edu.tr", ".org.tr", ".bbs.tr", ".av.tr", ".dr.tr", ".gs" ]
 
     url = ((('0'..'10').to_a).sort_by {rand}[0,1].join + "." + (0...8).map{ ('a'..'z').to_a[rand(29)] }.join  + (tld.to_a).sort_by {rand}[0,1].join)
 

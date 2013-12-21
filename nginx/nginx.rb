@@ -10,7 +10,7 @@
  $x=0
  while $x<array[0]
    File.open('access.log', 'w') do |f1|
-   f1.print ip_rand,"--",time,dir_random,number_rand,"\"-\"",scanner
+   f1.print ip_rand,"--",time,dir_random,number_rand,"\"-\"",browser_type
    f1.print ip_rand,"--",time,errorcode,"\"-\"","\"-\""
    $x=$x+1
  end

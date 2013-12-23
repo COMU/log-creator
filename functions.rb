@@ -82,9 +82,10 @@ class Parts
     string = (0...20).map{ o[rand(o.length)] }.join
     puts "\"GET/"+string+"HTTP/1.1\""
   end
-end
+
 #generat random error code
   def error_code
     array=[100,101,200,202,203,204,205,206,300,301,302,303,304,305,307,400,401,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,500,501,502,503,505]
     puts array[rand(0..36)]
   end
+end

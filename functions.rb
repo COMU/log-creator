@@ -95,11 +95,11 @@ end
 
   $now=Time.now
 #generated timestamp of the end-time of the request
-def timestampUret
+def timestamp
    space=$now+10
    first=$now.to_i
-   end=space.to_i
-   time=Time.at(rand(first..end))
+   last=space.to_i
+   time=Time.at(rand(first..last))
    first=space
    print "[",time,"]"
 end

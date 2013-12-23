@@ -92,5 +92,14 @@ end
     puts array[rand(0..36)]
  end
 
-    
-  
+
+  $now=Time.now
+#generated timestamp of the end-time of the request
+def timestampUret
+   space=$now+10
+   first=$now.to_i
+   end=space.to_i
+   time=Time.at(rand(first..end))
+   first=space
+   print "[",time,"]"
+end

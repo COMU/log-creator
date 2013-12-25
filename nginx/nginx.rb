@@ -18,8 +18,6 @@
  while $y<array[1]
    File.open('errorlog.rb', 'w') do |f2|
    f2.print time,"[error]",number_rand,"#0: ","bind() to ",number_rand,"failed",number_rand,":", word_rand
-   f2.print time,"[error]",number_rand,"#0: ","bind() to ",number_rand,"---process request time: ",number_rand,"ms--- client: ",ip_rand,"server:",URL,"request:",dir_random
-
    $y=$y+1
  end
 

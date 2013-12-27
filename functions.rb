@@ -1,26 +1,27 @@
 # encoding: utf-8
 #!/usr/bin/env ruby
 
-$start_time = Time.local(2010,1,1)
-$end_time = Time.local(2013,6,6)
-
+#$start_time = Time.local(2010,1,1)
+#$end_time = Time.local(2013,6,6)
+$now=Time.now
 class Parts
 
 #generated random time
  
-  def time
-	next_time = rand($start_time..$end_time)
-	$start_time = next_time
-  end
+#  def time
+#	next_time = rand($start_time..$end_time)
+#	$start_time = next_time
+#  end
 
-# def time
-   # five_second_later = $now+5
-   # int_now=$now.to_i 
-   # int_five_second_later=five_second_later.to_i
-   # random_time=Time.at(rand(int_now...int_five_second_later))
-  #  $now = five_second_later
- #   return random_time
-# end
+ def time_rand
+    t=rand(1...10)
+    later = $now+t
+    i_now=$now.to_i 
+    i_later=later.to_i
+    random_time=Time.at(rand(i_now...i_later))
+    $now =later
+    return random_time
+ end
 #generated random ip.format:'115.232.14.162'
   def ip_rand
     ip = ((('1'..'255').to_a).sort_by {rand}[0,1].join + "." + (('1'..'255').to_a).sort_by {rand}[0,1].join + "." + (('1'..'255').to_a).sort_by {rand}[0,1].join + "." + (('1'..'255').to_a).sort_by {rand}[0,1].join)

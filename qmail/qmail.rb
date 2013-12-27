@@ -9,7 +9,7 @@ class Qmail_Log < Parts
     i=0
     while i<number
       obj = Parts.new
-      puts "@#{obj.time_rand1()} rblsmtpd: #{obj.ip_rand()} pid #{obj.pid_rand()}: #{obj.number_rand()} Send mail to #{obj.word_rand()} #{obj.mail_rand()} #{time_rand2()}"
+      puts "@#{obj.time_rand().nsec} rblsmtpd: #{obj.ip_rand()} pid #{obj.port()}: #{obj.number_rand()} Send mail to #{obj.word_rand()} #{obj.mail_rand()} #{time_rand()}"
     i=i+1
     end
   end
@@ -19,7 +19,7 @@ class Qmail_Log < Parts
     i=0
     while i<number
       obj = Parts.new
-      puts "@#{obj.time_rand1()} tcpserver: status: #{obj.fraction_rand()}"
+      puts "@#{obj.time_rand().nsec} tcpserver: status: #{obj.fraction_rand()}"
       i=i+1
     end
   end
@@ -29,7 +29,7 @@ class Qmail_Log < Parts
     i=0
     while i<number
       obj = Parts.new
-      puts "@#{obj.time_rand1()} tcpserver: pid #{obj.pid_rand()} from #{obj.ip_rand()}"
+      puts "@#{obj.time_rand().nsec} tcpserver: pid #{obj.port()} from #{obj.ip_rand()}"
       i=i+1
     end
   end
@@ -40,7 +40,7 @@ class Qmail_Log < Parts
     array = ['ok', 'deny']
     while i<number
       obj = Parts.new
-      puts "@#{obj.time_rand1()} tcpserver: #{array.sample} #{obj.word_rand()}:#{obj.ip_rand()}:#{obj.port_rand()} #{obj.word_rand()}:#{obj.ip_rand()}:#{obj.port_rand()}"
+      puts "@#{obj.time_rand().nsec} tcpserver: #{array.sample} #{obj.word_rand()}:#{obj.ip_rand()}:#{obj.port()} #{obj.word_rand()}:#{obj.ip_rand()}:#{obj.port()}"
       i=i+1
     end
   end
@@ -50,7 +50,7 @@ class Qmail_Log < Parts
     i=0
     while i<number
       obj = Parts.new
-      puts "@#{obj.time_rand1()} info msg #{obj.number_rand()}: bytes #{obj.number_rand()} from <#{obj.mail_rand()}> qp #{obj.number_rand()} uid #{obj.number_rand()}"
+      puts "@#{obj.time_rand().nsec} info msg #{obj.number_rand()}: bytes #{obj.number_rand()} from <#{obj.mail_rand()}> qp #{obj.number_rand()} uid #{obj.number_rand()}"
       i=i+1
     end
   end
@@ -61,7 +61,7 @@ class Qmail_Log < Parts
     array = ['OK known', 'DENY no reverse DNS', 'GREY first time', 'GREY too soon']
     while i<number
       obj = Parts.new
-      puts "@#{obj.time_rand1()} jgreylist[#{obj.number_rand()}]: #{obj.ip_rand()} #{array.sample}"
+      puts "@#{obj.time_rand().nsec} jgreylist[#{obj.number_rand()}]: #{obj.ip_rand()} #{array.sample}"
       i=i+1
     end
   end
@@ -72,7 +72,7 @@ class Qmail_Log < Parts
     array = ['pass', 'none', 'unknown', 'neutral', 'softfail', 'fail', 'error']
     while i<number
       obj = Parts.new
-      puts "@#{obj.time_rand1()} qmail-smtpd[[#{obj.number_rand()}]: Received-SPF: #{array.sample} #{obj.word_rand()}:#{obj.ip_rand()}:#{obj.port_rand()}"
+      puts "@#{obj.time_rand().nsec} qmail-smtpd[[#{obj.number_rand()}]: Received-SPF: #{array.sample} #{obj.word_rand()}:#{obj.ip_rand()}:#{obj.port()}"
       i=i+1
     end
   end
@@ -83,7 +83,7 @@ class Qmail_Log < Parts
     array = ['disconnected', 'sent data']
     while i<number
       obj = Parts.new
-      puts "@#{obj.time_rand1()} qmail-smtpd[[#{obj.number_rand()}]: before greeting: [#{obj.ip_rand()}] client #{array.sample}"
+      puts "@#{obj.time_rand().nsec} qmail-smtpd[[#{obj.number_rand()}]: before greeting: [#{obj.ip_rand()}] client #{array.sample}"
       i=i+1 
     end
   end
@@ -94,7 +94,7 @@ class Qmail_Log < Parts
     array=['failed','successful']
     while i<number
       obj = Parts.new
-      puts "@#{obj.time_rand1()} qmail-smtpd[[#{obj.number_rand()}]: AUTH #{array.sample} [#{obj.ip_rand()}] <#{obj.mail_rand()}>"
+      puts "@#{obj.time_rand().nsec} qmail-smtpd[[#{obj.number_rand()}]: AUTH #{array.sample} [#{obj.ip_rand()}] <#{obj.mail_rand()}>"
       i=i+1
     end
   end
@@ -105,7 +105,7 @@ class Qmail_Log < Parts
     array=['MAIL FROM', 'RCPT TO']
     while i<number
       obj = Parts.new
-      puts "@#{obj.time_rand1()} qmail-smtpd[[#{obj.number_rand()}] #{array.sample} <#{obj.mail_rand()}>"
+      puts "@#{obj.time_rand().nsec} qmail-smtpd[[#{obj.number_rand()}] #{array.sample} <#{obj.mail_rand()}>"
       i=i+1
     end
   end 

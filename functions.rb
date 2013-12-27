@@ -1,15 +1,16 @@
 # encoding: utf-8
 #!/usr/bin/env ruby
 
+$start_time = Time.local(2010,1,1)
+$end_time = Time.local(2013,6,6)
+
 class Parts
 
 #generated random time
-  def time_rand from = 0.0, to = Time.now
-	Time.at(from + rand * (to.to_f - from.to_f))
-  end
-
-  def time(start_time, end_time)
-	next_time = time_rand start_time, end_time
+ 
+  def time
+	next_time = rand($start_time..$end_time)
+	$start_time = next_time
   end
 
 #generated random ip.format:'115.232.14.162'

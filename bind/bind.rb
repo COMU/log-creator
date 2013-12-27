@@ -48,18 +48,16 @@ while (i<=a )
 end
 $func = Parts.new
 $log = File.new("./log.txt", "w+")
-$start_time = Time.local(2010,1,1)
-$end_time = Time.local(2013,6,6)       
+
 class BIND		
 	
 	def arecord
 		j=1
 		
         	while (j <= $howmucha) # chooses the arecord values randomly which is requested to produce
-			$output = "#{($func.time($start_time, $end_time)).to_s.sub(" +",".")}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()} :  \  \n query: #{$func.URL()} IN A #$ip"
+			$output = "#{($func.time).to_s.sub(" +",".")}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()} :  \  \n query: #{$func.URL()} IN A #$ip"
 			puts $output
 			$log.puts($output)
-			$start_time = ($func.time($start_time, $end_time)).next_time
                 	j = j+1
         	end
 
@@ -68,10 +66,9 @@ class BIND
 	def cname
 		j=1
 		while (j <= $howmuchcname) # chooses the cname values randomly which is requested to produce
-			$output = "#{ ($func.time($start_time, $end_time)).to_s.sub(" +",".")} queries: info: client #{$func.ip_rand()} #  #{$func.port()}  :  \  \n query: #{$func.URL()} mail IN CNAME #{$func.URL()}"
+			$output = "#{ ($func.time).to_s.sub(" +",".")} queries: info: client #{$func.ip_rand()} #  #{$func.port()}  :  \  \n query: #{$func.URL()} mail IN CNAME #{$func.URL()}"
 			puts $output
 			$log.puts($output)
-                        $start_time = $func.time($start_time, $end_time).next_time
                         j = j+1
                 end
 		
@@ -82,7 +79,7 @@ class BIND
 		j=1
 
                 while (j <= $howmuchmx) # chooses the mx values randomly which is requested to produce
-			$output = "#{($func.time($start_time, $end_time)).to_s.sub(" +",".")}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()}   :  \  \n   query:" + url + " IN MX #$randpv " + url
+			$output = "#{($func.time).to_s.sub(" +",".")}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()}   :  \  \n   query:" + url + " IN MX #$randpv " + url
 			puts $output
 			$log.puts($output)
                         j = j+1
@@ -94,7 +91,7 @@ class BIND
 	def nameserver
 		j=1
 		while (j <= $howmuchnameserver) # chooses the nameserver values randomly which is requested to produce
-			$output = "#{($func.time($start_time, $end_time)).to_s.sub(" +",".")} queries: info: client #{$func.ip_rand()} #  #{$func.port()}   :  \  \n  query: IN NS #{$func.URL()}"
+			$output = "#{($func.time).to_s.sub(" +",".")} queries: info: client #{$func.ip_rand()} #  #{$func.port()}   :  \  \n  query: IN NS #{$func.URL()}"
 			puts $output
 			$log.puts($output)
 
@@ -109,10 +106,6 @@ options[:verbose] = false
 optparse = OptionParser.new do |opts|
   
   opts.banner = "Usage: file.rb [options]"
-
-  #opts.on( '-l', '--logfile FILE', 'Write log to FILE' ) do|file|
-  #  options[:logfile] = file
-  #end 
 
   opts.on('-h', '--help') do |help| # This displays the help screen
     puts opts

@@ -36,14 +36,12 @@ end
 line_count=IO.readlines('apache.conf')
 count=line_count[0].chop!.to_i
 
-#current date
-$now=Time.now
 
 i=0
 obj=Apache_Log.new
 while i<count
   print "#{obj.ip_rand()} - - "
-  print "[#{obj.timeCreator()}] "
+  print "[#{obj.time_rand()}] "
   print "\"#{obj.requestCreator()} /#{obj.word_rand()} HTTP1.1 \" "
   print "#{obj.error_code} "
   print "#{obj.number_rand()} "
@@ -51,3 +49,4 @@ while i<count
   print "\"#{obj.browser_type()}\"\n"
   i=i+1
 end
+

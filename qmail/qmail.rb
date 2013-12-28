@@ -112,7 +112,7 @@ class Qmail_Log < Parts
 end
 
 array = ['rblsmtpd', 'tcpserver1', 'qmail_send', 'tcpserver2', 'tcpserver3', 'jgreylist', 'spf', 'greetdelay', 'auth', 'mailrcpt']
-text_file=File.open('create.rb')
+text_file=File.open('qmail.conf')
     file = text_file.readlines()
     text_file.close
 

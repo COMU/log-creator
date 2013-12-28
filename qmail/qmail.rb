@@ -141,7 +141,7 @@ end
 optparse.parse!
 
 if options[:file]
-  exec("ruby qmail.rb > log.txt")
+  exec("ruby qmail.rb > qmail.txt")
 end
 
 text_file=File.open('qmail.conf')

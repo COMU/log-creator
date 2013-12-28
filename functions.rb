@@ -6,7 +6,7 @@
 $now=Time.now
 class Parts
 
-#generated random time
+#generated random time.
  
 #  def time
 #	next_time = rand($start_time..$end_time)

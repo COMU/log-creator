@@ -5,7 +5,7 @@ line=Array.new
 read=arr[1]
 line=read.split(" ")
 item=line[0].to_i
-item1=line[1.to_i]
+item1=line[1].to_i
 #access log 
 k=0
 while k<item

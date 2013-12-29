@@ -1,2 +1,0 @@
-accesslog errorlog
-4 6

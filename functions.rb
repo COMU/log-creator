@@ -1,18 +1,10 @@
 # encoding: utf-8
 #!/usr/bin/env ruby
 
-#$start_time = Time.local(2010,1,1)
-#$end_time = Time.local(2013,6,6)
 $now=Time.now
 class Parts
 
 #generated random time
- 
-#  def time
-#	next_time = rand($start_time..$end_time)
-#	$start_time = next_time
-#  end
-
  def time_rand
     t=rand(1...10)
     later = $now+t

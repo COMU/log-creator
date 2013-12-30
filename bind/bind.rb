@@ -55,7 +55,7 @@ class BIND
 		j=1
 		
         	while (j <= $howmucha) # chooses the arecord values randomly which is requested to produce
-			$output = "#{($func.time).to_s.sub(" +",".")}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()} :  \  \n query: #{$func.URL()} IN A #$ip"
+			$output = "#{($func.time_rand).to_s.sub(" +",".")}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()} :  \  \n query: #{$func.URL()} IN A #$ip"
 			puts $output
 			$log.puts($output)
                 	j = j+1
@@ -66,7 +66,7 @@ class BIND
 	def cname
 		j=1
 		while (j <= $howmuchcname) # chooses the cname values randomly which is requested to produce
-			$output = "#{ ($func.time).to_s.sub(" +",".")} queries: info: client #{$func.ip_rand()} #  #{$func.port()}  :  \  \n query: #{$func.URL()} mail IN CNAME #{$func.URL()}"
+			$output = "#{ ($func.time_rand).to_s.sub(" +",".")} queries: info: client #{$func.ip_rand()} #  #{$func.port()}  :  \  \n query: #{$func.URL()} mail IN CNAME #{$func.URL()}"
 			puts $output
 			$log.puts($output)
                         j = j+1
@@ -79,7 +79,7 @@ class BIND
 		j=1
 
                 while (j <= $howmuchmx) # chooses the mx values randomly which is requested to produce
-			$output = "#{($func.time).to_s.sub(" +",".")}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()}   :  \  \n   query:" + url + " IN MX #$randpv " + url
+			$output = "#{($func.time_rand).to_s.sub(" +",".")}  queries: info: client #{$func.ip_rand()}  #  #{$func.port()}   :  \  \n   query:" + url + " IN MX #$randpv " + url
 			puts $output
 			$log.puts($output)
                         j = j+1
@@ -91,7 +91,7 @@ class BIND
 	def nameserver
 		j=1
 		while (j <= $howmuchnameserver) # chooses the nameserver values randomly which is requested to produce
-			$output = "#{($func.time).to_s.sub(" +",".")} queries: info: client #{$func.ip_rand()} #  #{$func.port()}   :  \  \n  query: IN NS #{$func.URL()}"
+			$output = "#{($func.time_rand).to_s.sub(" +",".")} queries: info: client #{$func.ip_rand()} #  #{$func.port()}   :  \  \n  query: IN NS #{$func.URL()}"
 			puts $output
 			$log.puts($output)
 

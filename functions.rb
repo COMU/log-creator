@@ -90,7 +90,7 @@ class Parts
           'Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25',
           'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.13+ (KHTML, like Gecko) Version/5.1.7 Safari/534.57.2',
           'Mozilla/5.0 (X11; U; Linux x86_64; en-us) AppleWebKit/531.2+ (KHTML, like Gecko) Version/5.0 Safari/531.2+']
-    puts array[rand(0..20)]
+    return array[rand(0..20)]
   end
 
   
@@ -98,13 +98,13 @@ class Parts
   def dir_random
     o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
     string = (0...20).map{ o[rand(o.length)] }.join
-    puts "\"GET/"+string+"HTTP/1.1\""
+    return "\"GET/"+string+"HTTP/1.1\""
   end
 
 #generated random error code
   def error_code
     array=[100,101,200,202,203,204,205,206,300,301,302,303,304,305,307,400,401,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,500,501,502,503,505]
-    puts array[rand(0..36)]
+    return array[rand(0..36)]
   end
 #generated random request from list
   def requestCreator 
@@ -117,5 +117,10 @@ class Parts
     domains=['https://www.google.com.tr/','http://members.comu.edu.tr/','http://www.akvaryum.com/','http://www.youtube.com/','https://www.facebook.com/','http://obs.comu.edu.tr/','https://github.com/','http://www.hurriyet.com.tr/','http://tureng.com/','http://www.tutorialspoint.com/']
     rand_domain=rand(0...domains.length)
     return domains[rand_domain]
+  end
+#generate file extension
+  def extension
+    array = [".stl",".step",".stp",".dwg",".ez",".ccad",".drw",".tsp",".dxf",".xls",".unv",".jar",".hqx",".cpt",".pot",".pps",".ppt",".ppz",".doc",".bin",".class",".dms",".exe",".lha",".lzh",".oda",".ogg",".ogm",".pdf",".pgp",".ai",".eps",".ps",".prt",".rtf",".set",".smi",".smil",".sol",".vda",".mif",".xlc",".xll",".xlm",".xls",".xlw",".cod",".arj",".bcpio",".vcd",".pgn",".cpio",".csh",".deb",".dcr",".dir",".dxr",".dvi",".pre",".spl",".gtar",".gz",".hdf",".ipx",".ips",".js",".skd","skm",".skp",".skt",".latex",".lsp",".scm",".mif",".bat",".com",".exe",".cdf",".nc",".pl",".pm",".rar",".sh",".shar",".swf",".sit",".sv4cpio",".sv4crc",".tar.gz",".tgz",".tar",".tcl",".tex",".texi",".texinfo",".man",".me",".MS",".roff",".t",".tr",".ustar",".src",".zip",".zip",".tsi",".au",".snd",".kar",".mid",".midi",".mp2",".MP3",".mpga",".au",".aif",".aifc",".aiff",".m3u",".wax",".wma",".rpm",".ram",".rm",".ra",".wav",".pdb",".xyz",".ras",".gif",".ief",".jpe",".jpeg",".jpg",".PNG",".tif",".tiff",".ras",".pnm",".pbm",".pgm",".ppm",".rgb",".xbm",".xpm",".xwd",".iges",".igs",".mesh",".msh",".silo",".vrml",".wrl",".CSS",".htm",".html",".asc",".txt",".asc",".c",".cc",".f90",".f",".h",".hh",".m",".txt",".rtx",".rtf",".sgm",".sgml",".tsv",".jad",".etx",".xml",".dl",".fli",".flv",".gl",".mp2",".mp4",".mpe",".mpeg",".mpg",".mov",".qt",".viv",".vivo",".fli",".asf",".asx",".wmv",".wmx",".wvx",".avi",".movie",".mime",".ice",".vrm",".vrml"]
+    return array[rand(0..200)]
   end
 end

@@ -9,7 +9,7 @@ $a=word_rand
 while $i<array[0]
    File.open('proftpd.log', 'w') do |f1|
    if $i<1
-     f1.print time_rand,a,"proftpd","[",number_rand,"]",a,"(",word_rand,":","ProFTPD 1.3.4a (maint) (built Fri Apr 19 2013 20:25:01 UTC) standalone mode STARTUP"
+     f1.print time_rand,a,"proftpd","[",number_rand,"]",a,"(",word_rand,":","ProFTPD 1.3.4a (maint) (built",time_rand,"UTC) standalone mode STARTUP"
    end
    f1.print time_rand,a,"proftpd","[",number_rand,"]",a,"(",word_rand,"[",ip_rand,"]):",connection_rand
    $i=$i+1

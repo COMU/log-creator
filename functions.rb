@@ -123,4 +123,10 @@ class Parts
     array = [".stl",".step",".stp",".dwg",".ez",".ccad",".drw",".tsp",".dxf",".xls",".unv",".jar",".hqx",".cpt",".pot",".pps",".ppt",".ppz",".doc",".bin",".class",".dms",".exe",".lha",".lzh",".oda",".ogg",".ogm",".pdf",".pgp",".ai",".eps",".ps",".prt",".rtf",".set",".smi",".smil",".sol",".vda",".mif",".xlc",".xll",".xlm",".xls",".xlw",".cod",".arj",".bcpio",".vcd",".pgn",".cpio",".csh",".deb",".dcr",".dir",".dxr",".dvi",".pre",".spl",".gtar",".gz",".hdf",".ipx",".ips",".js",".skd","skm",".skp",".skt",".latex",".lsp",".scm",".mif",".bat",".com",".exe",".cdf",".nc",".pl",".pm",".rar",".sh",".shar",".swf",".sit",".sv4cpio",".sv4crc",".tar.gz",".tgz",".tar",".tcl",".tex",".texi",".texinfo",".man",".me",".MS",".roff",".t",".tr",".ustar",".src",".zip",".zip",".tsi",".au",".snd",".kar",".mid",".midi",".mp2",".MP3",".mpga",".au",".aif",".aifc",".aiff",".m3u",".wax",".wma",".rpm",".ram",".rm",".ra",".wav",".pdb",".xyz",".ras",".gif",".ief",".jpe",".jpeg",".jpg",".PNG",".tif",".tiff",".ras",".pnm",".pbm",".pgm",".ppm",".rgb",".xbm",".xpm",".xwd",".iges",".igs",".mesh",".msh",".silo",".vrml",".wrl",".CSS",".htm",".html",".asc",".txt",".asc",".c",".cc",".f90",".f",".h",".hh",".m",".txt",".rtx",".rtf",".sgm",".sgml",".tsv",".jad",".etx",".xml",".dl",".fli",".flv",".gl",".mp2",".mp4",".mpe",".mpeg",".mpg",".mov",".qt",".viv",".vivo",".fli",".asf",".asx",".wmv",".wmx",".wvx",".avi",".movie",".mime",".ice",".vrm",".vrml"]
     return array[rand(0..200)]
   end
+#generate ftp connection result
+  def connection_rand
+    array=['FTP session opened.','USER anonymous: no such user found from localhost [127.0.0.1] to ::ffff:127.0.0.1:21
+','FTP session closed.','USER melek: Login successful.']
+    return array[rand(0..4)]
+  end
 end

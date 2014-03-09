@@ -17,6 +17,6 @@ while k<item
   #Anonymous login :
   print time_rand,'[pid',number_rand,']','[ftp] OK LOGIN : Client "',ip_rand , 'anon password "-----@"' #tarayıcı ya da sunucu isimleriyle tamamlanacak sanırım "----" olan kısımda 
   #File upload :
-  print time_rand,'[pid',number_rand,']','[xx] OK UPLOAD : Client "',ip_rand,'"/' #dosya isimleri ve boyutları üretilerek tamamlanacak 
+  print time_rand,'[pid',number_rand,']','[xx] OK UPLOAD : Client "',ip_rand,'"/',word_rand,'.',extension,'"' #dosya   boyutları üretilerek tamamlanacak 
   k=k+1
 end

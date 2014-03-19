@@ -1,13 +1,19 @@
-#küçük düzeltilecek yerler var 
 load '../functions.rb'
-arr = IO.readlines('item.txt')
-read=""
-line=Array.new
-read=arr[1]
-item=read.to_i
+array=Array.new
+array1=Array.new
+line=""
+pot=IO.readlines("vsftp.conf")
+array=pot[1]
+array=line.split("=")
+
 #vsftpd logs
 k=0
-while k<item 
+i=array[1].to_i
+while k<i
+  array1=pot[2]
+  array1=line.split("=")
+  array1[1]=array1[1].to_i
+  $a=array1[rand(0..array1[1])]
   #Connection attempt:
   print time_rand, '[pid ',number_rand,']','CONNECT: Client " ',ip_rand,'"'
   #Failed login:
@@ -15,8 +21,9 @@ while k<item
   #Login ok:
   print time_rand,'[pid',number_rand,']','[dcid] OK LOGIN : Client "',ip_rand
   #Anonymous login :
-  print time_rand,'[pid',number_rand,']','[ftp] OK LOGIN : Client "',ip_rand , 'anon password "-----@"' #tarayıcı ya da sunucu isimleriyle tamamlanacak sanırım "----" olan kısımda 
+  print time_rand,'[pid',number_rand,']','[ftp] OK LOGIN : Client "',ip_rand , 'anon password "',word_rand,'@"'
   #File upload :
-  print time_rand,'[pid',number_rand,']','[xx] OK UPLOAD : Client "',ip_rand,'"/',word_rand,'.',extension,'"' #dosya   boyutları üretilerek tamamlanacak 
+  print time_rand,'[pid',number_rand,']','[xx] OK UPLOAD : Client "',ip_rand,'"/',word_rand,'.',extension,a,'MB"'
   k=k+1
 end
+

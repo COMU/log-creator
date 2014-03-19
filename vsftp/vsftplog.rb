@@ -1,28 +1,25 @@
-load '../functions.rb'
-array=Array.new
-array1=Array.new
-line=""
-read=IO.readlines("vsftp.conf")
-array=pot[1]
-array=line.split("=")
-
+load "../functions.rb"
+arr=IO.readlines('vsftp.conf')
+line1=Array.new
+line2=Array.new
+line1=arr[0].split("=")
+line2=arr[1].split("=")
+line1[1]=line1[1].to_i
+line2[1]=line2[1].to_i
 #vsftpd logs
 k=0
-i=array[1].to_i
-while k<i
-  array1=read[2]
-  array1=line.split("=")
-  array1[1]=array1[1].to_i
-  $a=array1[rand(0..array1[1])]
+while k<line1[1]
+  $a=line2[rand(0..line2[1])]
   #Connection attempt:
-  print time_rand, '[pid ',number_rand,']','CONNECT: Client " ',ip_rand,'"'
+  puts time_rand, '[pid ',number_rand,']','CONNECT: Client " ',ip_rand,'"'
   #Failed login:
-  print time_rand,'[pid',number_rand,']','FAIL LOGIN : Client "',ip_rand,'"'
+  puts time_rand,'[pid',number_rand,']','FAIL LOGIN : Client "',ip_rand,'"'
   #Login ok:
-  print time_rand,'[pid',number_rand,']','[dcid] OK LOGIN : Client "',ip_rand
+  puts time_rand,'[pid',number_rand,']','[dcid] OK LOGIN : Client "',ip_rand
   #Anonymous login :
-  print time_rand,'[pid',number_rand,']','[ftp] OK LOGIN : Client "',ip_rand , 'anon password "',word_rand,'@"'
+  puts time_rand,'[pid',number_rand,']','[ftp] OK LOGIN : Client "',ip_rand , 'anon password "',word_rand,'@"'
   #File upload :
-  print time_rand,'[pid',number_rand,']','[xx] OK UPLOAD : Client "',ip_rand,'"/',word_rand,'.',extension,a,'MB"'
+  puts time_rand,'[pid',number_rand,']','[xx] OK UPLOAD : Client "',ip_rand,'"/',word_rand,'.',extension,a,'MB"'
   k=k+1
 end
+    

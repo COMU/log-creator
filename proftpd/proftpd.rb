@@ -12,7 +12,7 @@ while $i<array[1]
    array1=pot[2]
    array1=line.split(",")
    $a=array1[rand(0..array1.length)]
-   array2=pot[4]
+   array2=pot[3]
    array2=line.split(",")
    $b=array2[rand(0..array2.length)]
 
@@ -23,4 +23,3 @@ while $i<array[1]
    f1.print time_rand,$a,"proftpd","[",number_rand,"]",$a,"(",$b,"):",connection_rand
    $i=$i+1
 end
-

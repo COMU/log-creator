@@ -16,10 +16,10 @@ while $i<array[1]
    array2=pot[3]
    array2=line.split(",")
    $b=array2[rand(0..array2.length)]
-   array3=pot[3]
+   array3=pot[4]
    array3=line.split(",")
    $c=array3[rand(0..array3.length)]
-   array4=pot[4]
+   array4=pot[5]
    array4=line.split("=")
    array4[1]=array4[1].to_i
    $m=[rand(0..array4[1])]

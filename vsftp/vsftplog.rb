@@ -2,7 +2,7 @@ load '../functions.rb'
 array=Array.new
 array1=Array.new
 line=""
-pot=IO.readlines("vsftp.conf")
+read=IO.readlines("vsftp.conf")
 array=pot[1]
 array=line.split("=")
 
@@ -10,7 +10,7 @@ array=line.split("=")
 k=0
 i=array[1].to_i
 while k<i
-  array1=pot[2]
+  array1=read[2]
   array1=line.split("=")
   array1[1]=array1[1].to_i
   $a=array1[rand(0..array1[1])]
@@ -26,4 +26,3 @@ while k<i
   print time_rand,'[pid',number_rand,']','[xx] OK UPLOAD : Client "',ip_rand,'"/',word_rand,'.',extension,a,'MB"'
   k=k+1
 end
-

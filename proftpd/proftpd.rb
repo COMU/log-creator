@@ -1,5 +1,6 @@
 load '../functions.rb'
 pot=IO.readlines("proftpd.conf")
+func=Parts.new
 show=Array.new
 show1=Array.new
 show2=Array.new
@@ -24,13 +25,12 @@ while $i<show[1]
    show4=array.split("=")
    show4[1]=show4[1].to_i
    $m=[rand(0..show4[1])]
-   File.open('proftpd.log','w') do |f1|
+   #File.open('proftpd.log','w') do |f1|
    if $i<1
-     f1.print time_rand,$a,"proftpd","[",number_rand,"]",$a,"(",word_rand,":","ProFTPD 1.3.4a (maint) (built",time_rand,"UTC) standalone mode STARTUP"
+     print func.time_rand," ",$a," ","proftpd","[",func.number_rand,"]"," ",$a," ","(",func.word_rand,":","ProFTPD 1.3.4a (maint) (built",func.time_rand,"UTC) standalone mode STARTUP"
    end
-   f1.print time_rand,$a,"proftpd","[",number_rand,"]",$a,"(",$b,"):",connection_rand
+   print func.time_rand," ",$a," ","proftpd","[",func.number_rand,"]"," ",$a," ","("," ",$b," ","):",func.connection_rand
 
-   f1.print time_rand,$a,"proftpd","[",number_rand,"]",$a,"(",$b,"):",$c,$m,"MB"
+   print func.time_rand," ",$a," ","proftpd","[",func.number_rand,"]"," ",$a," ","("," ",$b," ","):"," ",$c," "," ",$m,"MB"
    $i=$i+1
-end
 end

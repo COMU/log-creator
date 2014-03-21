@@ -30,8 +30,8 @@ while $i<show[1]
      print func.time_rand," ",$a," ","proftpd","[",func.number_rand,"]"," ",$a," ","(",func.word_rand,":","ProFTPD 1.3.4a (maint) (built",func.time_rand,"UTC) standalone mode STARTUP"
      $i=$i+1
    end
-   print func.time_rand," ",$a," ","proftpd","[",func.number_rand,"]"," ",$a," ","("," ",$b," ","):",func.connection_rand
-   print func.time_rand," ",$a," ","proftpd","[",func.number_rand,"]"," ",$a," ","("," ",$b," ","):"," ",$c," "," ",$m,"MB"
+   print func.time_rand," ",$a," ","proftpd","[",func.number_rand,"]"," ",$a," ","(",$b,"):",func.connection_rand
+   print func.time_rand," ",$a," ","proftpd","[",func.number_rand,"]"," ",$a," ","(",$b,"):"," ",$c," "," ",$m,"MB"
    $i=$i+1
 end
 end

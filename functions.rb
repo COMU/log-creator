@@ -129,4 +129,8 @@ class Parts
 ','FTP session closed.','USER melek: Login successful.']
     return array[rand(0..4)]
   end
+#generate random mac address format: 'a9:h5:kk:88:0h:d9'
+  def mac_address
+    return (1..6).map{"%0.2x"%rand(256)}.join(":")
+  end
 end

@@ -40,7 +40,6 @@ while $i<show[1]
   if l==255
     l=0
   end
-
   print "lease"," ",$c,".",s,".",e[l]," ","{"," ","\n"
   print "          ","starts"," ",$a," ",$d,";","\n"
   print "          ","ends"," ",$a," ",result,";","\n"

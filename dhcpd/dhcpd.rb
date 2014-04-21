@@ -5,10 +5,12 @@ array=Array.new
 show=Array.new
 show1=Array.new
 show2=Array.new
+show3=Array.new
 array=pot[0]
 show=array.split("=")
 show[1]=show[1].to_i
 $i=0
+l=0
 while $i<show[1]
   array=pot[3]
   show1=array.split(",")
@@ -23,13 +25,29 @@ while $i<show[1]
   $b=show1[rand(0..show1.length)]
   $a=rand(1..10)
   $c=192.168
-  $e=rand(0..255)
-  print "lease"," ",func.ip_rand," ","{"," ","\n"
+  e=Array.new
+  e=(1..255).sort_by{rand}
+  f=Array.new
+  f=(1..255).sort_by{rand}
+  s=f[l]
+  $g=func.mac_address
+  array=pot[1]
+  show3=array.split("/")
+  show3[1]=show3[1].to_i
+  if show3[1]==24
+    s=1
+  end
+  if l==255
+    l=0
+  end
+
+  print "lease"," ",$c,".",s,".",e[l]," ","{"," ","\n"
   print "          ","starts"," ",$a," ",$d,";","\n"
   print "          ","ends"," ",$a," ",result,";","\n"
-  print "          ","hardware ethernet"," ",$c,".1.",$e,";","\n"
-  print "          ","uid"," ","01",":",$c,".1.",$e,";","\n"
+  print "          ","hardware ethernet"," ",$g,";","\n"
+  print "          ","uid"," ","01",":",$g,";","\n"
   print "          ","client-hostname"," ",'"',$b,'"',";","\n"
   print "}","\n"
   $i=$i+1
+  l=l+1
 end

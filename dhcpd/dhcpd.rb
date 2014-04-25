@@ -44,6 +44,9 @@
       z=192
       k=168
     end
+    if show3[1]==8
+      z=192
+    end
     if l==255
       l=0
     end

@@ -133,4 +133,9 @@ class Parts
   def mac_address
     return (1..6).map{"%0.2x"%rand(256)}.join(":")
   end
+#generate unique random ip number
+  def unique_ip
+    array=Array.new
+    array=(1..255).sort_by{rand}
+  end
 end

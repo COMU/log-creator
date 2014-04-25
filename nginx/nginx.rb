@@ -1,23 +1,20 @@
  load '../functions.rb'
-
-
+ func=Parts.new
  array=Array.new
- line=""
  pot=IO.readlines("request.txt")
  array=pot[1]
- array=line.split(" ")
+ show=array.split(" ")
  $i=0
  $x=0
- while $x<array[0]
-   File.open('access.log', 'w') do |f1|
-   f1.print ip_rand,"--",time_rand,dir_random,number_rand,"\"-\"",browser_type
-   f1.print ip_rand,"--",time_rand,errorcode,"\"-\"","\"-\""
+ show[0]=show[0].to_i
+ show[1]=show[1].to_i
+ while $x<show[0]
+   print func.ip_rand,"--",func.time_rand,func.dir_random,func.number_rand,"\"-\"",func.browser_type,"\n"
+   print func.ip_rand,"--",func.time_rand,func.error_code,"\"-\"","\"-\"","\n"
    $x=$x+1
  end
  $y=0
- while $y<array[1]
-   File.open('errorlog.rb', 'w') do |f2|
-   f2.print time_rand,"[error]",number_rand,"#0: ","bind() to ",number_rand,"failed",number_rand,":", word_rand
+ while $y<show[1]
+   print func.time_rand,"[error]",func.number_rand,"#0: ","bind() to ",func.number_rand,"failed",func.number_rand,":", func.word_rand,"\n"
    $y=$y+1
  end
-

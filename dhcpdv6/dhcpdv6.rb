@@ -3,6 +3,9 @@ pot=IO.readlines("dhcpdv6.conf")
 func=Parts.new
 array=Array.new
 show=Array.new
+show1=Array.new
+show2=Array.new
+show3=Array.new
 array=pot[0]
 show=array.split("=")
 show[1]=show[1].to_i
@@ -19,12 +22,25 @@ $g=rand(200..300)
 $l=rand(200..300)
 $c=rand(2000..3000)
 $e=rand(3000..5000)
-$z=(1..4).map{"%0.4x"%rand(256)}.join(":")
+array=pot[2]
+show1=array.split("=")
+show3=show1[1].split("/")
+show2=array.split("/")
+show2[1]=show2[1].to_i
+if show2[1]==64
+  $s=4
+end
+if show2[1]==80
+  $s=5
+end
+if show2[1]==96
+  $s=6
+end
 while $i<show[1]
   if $i==0
     $d=func.time_rand
   end
-  $t=(1..2).map{"%0.4x"%rand(256)}.join(":")
+  $t=(1..$s).map{"%0.4x"%rand(256)}.join(":")
   $d=$d.to_i
   array=pot[1]
   show2=array.split("=")
@@ -41,7 +57,7 @@ while $i<show[1]
   print "\n"
   print "ia-na"," ",'"',"/\\",$g,"\\",$l,"\\","0",array4[rand(0..7)],"\\","000\\001\\000\\001\\0",array2[rand(0..2)],array3[rand(0..4)],"\\0",array4[rand(0..7)],"\\",$l,"/\\",$g,"\\",rand(3000..4000),'"',";","\n"
   print "  ","cltt"," ",$a," ",$d,";","\n"
-  print "  ","iaaddr"," ",$z,":",$t,"{","\n"
+  print "  ","iaaddr"," ",show3[0],$t,"{","\n"
   print "    ","binding state"," ",array1[rand(0..1)],";","\n"
   print "    ","preferred-life"," ",$c,"\n"
   print "    ","max-life"," ",$e,"\n"

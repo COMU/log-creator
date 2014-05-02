@@ -1,5 +1,5 @@
 load '../functions.rb'
-pot=IO.readlines("dhcpdv6.conf")
+pot=IO.readlines("dhcpv6.conf")
 func=Parts.new
 array=Array.new
 show=Array.new
